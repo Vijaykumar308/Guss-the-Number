@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess Number</title>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+		*{margin:0; padding: 0;box-sizing: border-box;font-family: 'Josefin Sans', sans-serif;}
+		.containner{
+			width: 100vw;
+			height: 100vh;
+			background-color: skyblue;
+			position: relative;
+		}
+		.containner .chat-window{
+			width: 22vw;
+			height: 67vh;
+			background-color: #fff;
+			box-shadow: 1px 2px 3px black;
+			position: absolute;
+			top: 50%;left: 70%;
+			transform: translate(-50%,-50%);
+			overflow-y: auto;
+		}
+		.containner .chat-window h2{
+			background-color: lightgreen;
+			padding: 8px 10px;
+		}
+		.chat-window .chat-log{
+			background-color: red;
+
+		}
+		.chat-window input[type="number"]{
+			position: absolute;
+			bottom: 0;
+			width: 14vw;
+			font-size: 18px;
+			padding: 12px 15px;
+			border-radius: 5px;
+			outline: none;
+			font-weight: bold;
+		}
+		.chat-window input[type="submit"]{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 11px 12px;
+			width: 7.8vw;
+			background-color: #E8E2E2;
+			color: #45A902;
+			border:none;
+			border: 1px solid #45A902; 
+			border-radius: 5px;
+			font-size: 17px;
+			font-family: 'Open Sans', sans-serif;
+			transition: 0.3s all linear;
+		}
+	</style>
+	<link rel="icon" type="image/png" href="GussNum.png">
+</head>
+<body>
+	<header>
+		<div class="containner">
+			<div class="chat-window">
+				<h2>Guess The Number</h2>			
+				<div class="chat-log">
+				</div>
+
+				<input type="number" placeholder="Enter Number" id="num"/>
+				<input type="submit" value="Submit" id="btn"/>
+			</div>
+		</div>
+	</header>
+
+	<script>
+		let numbers = document.getElementById('num').value;
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				alert("The number is "+numbers);
+			});
+		});	
+	</script>
+</body>
+</html>
